@@ -5,22 +5,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Aluno</title>
-    <link rel="stylesheet" href="/Aluno/CadastroAluno/style/style.css">
+    <link rel="stylesheet" href="/menu/style/style.css">
+    <link rel="stylesheet" href="/Aluno/CadastroAluno/css/style.css">
 </head>
 <body>
     <input type="checkbox" id="check">
     <label for="check" id="icone"><img src="/img/sala-de-estudo-tutorial-menu-lateral-retratil-com-css3-n-1-sem-javascript-icone.png" for:></label>
-
     <div class="barra">
         <nav>
-            <a href=""><div class="link">Cadasto Aluno</div></a>
-            <a href=""><div class="link">Atualizar Aluno</div></a>
-            <a href=""><div class="link">Tabela Aluno</div></a>
-            <a href=""><div class="link">Cadastro Livro</div></a>
-            <a href=""><div class="link">Atualizar Livro</div></a>
-            <a href=""><div class="link">Tabela Livro</div></a>
-            <a href=""><div class="link">Configuração</div></a>
+            <a href="/Aluno/CadastroAluno/index.html"><div class="link">Cadastro Aluno</div></a>
+            <a href="/Aluno/AtualizarAluno/index.html"><div class="link">Atualizar Aluno</div></a>
+            <a href="/Aluno/TabelaAluno/index.html"><div class="link">Tabela Aluno</div></a>
+            <a href="/Livro/Cadastro Livro/index.html"><div class="link">Cadastro Livro</div></a>
+            <a href="/Livro/Atualizar Livro/index.html"><div class="link">Atualizar Livro</div></a>
+            <a href="/Livro/Tabela Livro/index.html"><div class="link">Tabela Livro</div></a>
         </nav>
     </div>
-</body>
+    <main id="campoCadastro">
+        <section>
+            <div id="titulo">
+            <h1>Cadastro Aluno</h1>
+            <hr>
+            
+            <div id="div1">
+                <div id="div1-1">
+                    <label for="idAluno" id="idAluno">ID:</label>
+                    <input name="idAluno" type="text" id="inputId">
+                </div>
+                <div id="div1-2">
+                    <label for="nomeAluno" id="nomeAluno">Nome:</label>
+                    <input name="nomeAluno" type="text" id="inputNome">
+                </div>    
+            </div>
+            <div id="div2">
+                <div id="div2-1">
+                    <label for="idCpf" id="idCpf">CPF:</label>
+                    <input name="idCpf" type="text" id="inputCpf">
+                </div>
+                <div id="div2-2">
+                    <label for="idRg" id="idRg">RG:</label>
+                    <input name="idRg" type="text" id="inputRg">
+                </div>
+                <div id="div2-3">
+                    <label for="idRa" id="idRa">RA:</label>
+                    <input name="idRa" type="text" id="inputRa">
+                </div>
+            </div>
+            <div id="div3">
+                <div id="div3-1">
+                    <label for="idDtNasc" id="idDtNasc">Data Nascimento:</label>
+                    <input name="idDtNasc" type="date" id="inputDtNasc">
+                </div>
+                <div id="div3-2">
+                    <label for="idDtCad" id="idDtCad">Data Cadastro:</label>
+                    <input name="idDtCad" type="date" id="inputDtCad">
+                </div>
+            </div>
+            <div id="div4">
+                <div id="div4-1">
+                    <label for="idCurso" id="idCurso">Curso:</label>
+                    <select name="idCurso" id="inputCurso">
+                        <option value="Escolher:">Escolher:</option>
+                        <option value="Administração">Administração</option>
+                        <option value="Administrador de Banco de Dados">Administrador de Banco de Dados</option>
+                        <option value="Análise de sistemas">Análise de sistemas</option>
+                        <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                        <option value="Contabilidade">Contabilidade</option>
+                        <option value="Eletricista Industrial">Eletricista Industrial</option>
+                        <option value="Logistica">Logistica</option>
+                        <option value="Mecatrônica">Mecatrônica</option>
+                        <option value="Recursos Humanos">Recursos Humanos</option>  
+                    </select>                  
+                    </div>
+                    <div id="div4-2">
+                        <label for="idFg" id="idFg">Forma de Pagamento:</label>
+                        <select name="idFg" type="" id="inputFg">
+                            <option value="Escolher:">Escolher:</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Cartão de Debito">Cartão de Debito</option>
+                            <option value="PIX">PIX</option>
+                            <option value="Boleto">Boleto</option>
+                        </select>
+                        </div>
+            </div>
+            <button id="insert">Cadastrar</button>
+        </div>
+        </section>  
+    </main>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC8BbRjmnJYBFUhRT6euJV0VxlteZD4HPA",
+            authDomain: "adne-7feca.firebaseapp.com",
+            databaseURL: "https://adne-7feca-default-rtdb.firebaseio.com",
+            projectId: "adne-7feca",
+            storageBucket: "adne-7feca.appspot.com",
+            messagingSenderId: "1007367144068",
+            appId: "1:1007367144068:web:c89daef197e93b5901f8d1",
+            measurementId: "G-JD7VB4HJ7F"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+         firebase.analytics();
+    </script>
+
+        <script>
+            var idV, nomeV, cpfV, rgV, raV, dtnV, dtcV, cursoV, fgV;
+
+
+            function le() 
+            {
+                idV = document.getElementById('inputId').value;
+                nomeV = document.getElementById('inputNome').value;
+                cpfV = document.getElementById('inputCpf').value;
+                rgV = document.getElementById('inputRg').value;
+                raV = document.getElementById('inputRa').value;
+                dtnV = document.getElementById('inputDtNasc').value;
+                dtcV = document.getElementById('inputDtCad').value;
+                cursoV = document.getElementById('inputCurso').value;
+                fgV = document.getElementById('inputFg').value;    
+            }
+
+
+            document.getElementById("insert").onclick = function() {
+                le();
+
+                firebase.database().ref('escola/'+idV).set({id: idV, nomeV, cpfV, rgV, raV, dtnV, dtcV, cursoV, fgV});
+                setTimeout(le, 1000*5);
+                alert("Cadastro feito")
+            }
+
+            
+
+            console.log(snapshot);
+            document.getElementById('nomeAluno').value = snapshot.val().nome;
+
+
+        </script>
+    </body>
 </html>

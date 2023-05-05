@@ -1,0 +1,223 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1{
+    font-size: 85px;
+    color: white;
+}
+
+input{
+    font-size: 15px;
+}
+
+select{
+    font-size: 15px;
+}
+
+button{
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    gap: 30px;
+}
+
+
+
+#titulo{
+    margin-left: 70px;
+    align-items: center;
+    text-align: center;
+}
+
+#div1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+}
+#idAluno{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#nomeAluno{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputId{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+}
+
+#inputNome{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 300px;
+}
+
+
+#div2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+#idCpf{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#idRg{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#idRa{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputCpf{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+    
+}
+
+#inputRg{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+}
+
+#inputRa{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+}
+
+#div3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 80px;
+}
+
+#idDtNasc{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#idDtCad{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputDtNasc{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#inputDtCad{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#div4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 95px;
+}
+
+#idCurso{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#idFg{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputCurso{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#inputFg{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#divB{
+    gap: 30px;
+}
+
+#insert{
+    margin-left: 0px;
+    margin-right: 25px;
+}
+
+#delete{
+    margin-left: 3px;
+    margin-right: 295px; 
+}

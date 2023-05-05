@@ -1,0 +1,212 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1{
+    font-size: 85px;
+    color: white;
+}
+
+input{
+    font-size: 15px;
+}
+
+select{
+    font-size: 15px;
+}
+
+button{
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    gap: 30px;
+}
+
+
+#titulo{
+    margin-left: 70px;
+    align-items: center;
+}
+
+#div1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+}
+#idLivro{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#nomeLivro{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputIdLivro{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+}
+
+#inputNomeLivro{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 300px;
+}
+
+
+#div2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+#idAutor{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#idGenero{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#idDatL{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputDatL{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+    
+}
+
+#inputAutor{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+}
+
+#inputGenero{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 150px;
+}
+
+#div3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 80px;
+}
+
+#idDescricao{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputDescricao{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    margin-top: 5px;
+    width: 500px;
+    height: 100px;
+    resize: none;
+}
+
+#inputDtNasc{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#inputDtCad{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#div4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 95px;
+}
+
+#idCurso{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#idFg{
+    color: white;
+    display: flex;
+    align-items: top;
+}
+
+#inputCurso{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#inputFg{
+    display: flex;  
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
