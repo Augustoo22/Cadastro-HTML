@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar Livro</title>
     <link rel="stylesheet" href="/menu/style/style.css">
+    <link rel="stylesheet" href="/Livro/Atualizar Livro/css/style.css">
 </head>
 <body>
     <input type="checkbox" id="check">
@@ -21,6 +22,148 @@
             <a href="/Livro/Tabela Livro/index.html"><div class="link">Tabela Livro</div></a>
         </nav>
     </div>
-    <script src="/menu/js/script.js"></script>
+    <main id="campoCadastro">
+        <section>
+            <div id="titulo">
+            <h1>Atualizar Livro</h1>
+            <hr>
+            
+            <div id="div1">
+                <div id="div1-1">
+                    <label for="idLivro" id="idLivro">ID:</label>
+                    <input name="idLivro" type="text" id="inputIdLivro">
+                </div>
+                <div id="div1-2">
+                    <label for="nomeLivro" id="nomeLivro">Nome:</label>
+                    <input name="nomeLivro" type="text" id="inputNomeLivro">
+                </div>    
+            </div>
+            <div id="div2">
+                <div id="div2-1">
+                    <label for="idAutor" id="idAutor">Autor:</label>
+                    <input name="idAutor" type="text" id="inputAutor">
+                </div>
+                <div id="div2-2">
+                    <label for="idGenero" id="idGenero">Gênero:</label>
+                    <select name="idGenero" type="text" id="inputGenero">
+                        <option value="Escolher">Escolher</option>
+                        <option>Arte e Fotografia</option>
+                        <option>Aventura</option>
+                        <option>Biografias e Memórias</option>
+                        <option>Ciência e Tecnologia</option>
+                        <option>Autoajuda</option>
+                        <option>Clássicos</option>
+                        <option>Contos e Crônicas</option>
+                        <option>Educação e Didáticos</option>
+                        <option>Ficção Científica</option>
+                        <option>Guerra</option>
+                        <option>História</option>
+                        <option>HQs e Mangás</option>
+                        <option>Infantojuvenil</option>
+                        <option>Medicina e Saúde</option>
+                        <option>Mistério e Suspense</option>
+                        <option>Negócios e Finanças</option>
+                        <option>Poesia</option>
+                        <option>Policial</option>
+                        <option>Religião e Espiritualidade</option>
+                        <option>Romance</option>
+                        <option>Terror</option>
+                        <option>Tecnologia</option>
+                        <option>Viagem</option>
+                    </select>
+                </div>
+                <div id="div2-3">
+                    <label for="idDatL" id="idDatL">Data Lançamento:</label>
+                    <input name="idDatL" type="date" id="inputDatL">
+                </div>
+            </div>
+            <div id="div3">
+                <div id="div3-1">
+                    <label for="idDescricao" id="idDescricao">Descrição:</label>
+                    <textarea id="inputDescricao"></textarea>
+                </div>
+               
+           
+            </div>
+            <div id="botões">
+
+                <button id="selecione">Selecionar</button>   
+                <button id="insert">Recadastrar</button>
+                <button id="delete">Apagar</button>
+        </div>
+        </section>  
+    </main>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC8BbRjmnJYBFUhRT6euJV0VxlteZD4HPA",
+            authDomain: "adne-7feca.firebaseapp.com",
+            databaseURL: "https://adne-7feca-default-rtdb.firebaseio.com",
+            projectId: "adne-7feca",
+            storageBucket: "adne-7feca.appspot.com",
+            messagingSenderId: "1007367144068",
+            appId: "1:1007367144068:web:c89daef197e93b5901f8d1",
+            measurementId: "G-JD7VB4HJ7F"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+         firebase.analytics();
+    </script>
+
+        <script>
+            var idV, nomeV, autorV, generoV, dataLV, descV;
+
+
+            function le() 
+            {
+                idV = document.getElementById('inputIdLivro').value;
+                nomeV = document.getElementById('inputNomeLivro').value;
+                autorV = document.getElementById('inputAutor').value;
+                generoV = document.getElementById('inputGenero').value;
+                dataLV = document.getElementById('inputDatL').value;
+                descV = document.getElementById('inputDescricao').value;   
+            }
+        
+            document.getElementById("selecione").onclick = function(){
+    le();
+    firebase.database().ref('escolaBiblioteca/'+idV).on('value', function(snapshot){
+     document.getElementById('inputIdLivro').value= snapshot.val().id;
+     document.getElementById('inputNomeLivro').value= snapshot.val().nomeV;
+     document.getElementById('inputAutor').value= snapshot.val().autorV;
+     document.getElementById('inputGenero').value= snapshot.val().generoV;
+     document.getElementById('inputDatL').value= snapshot.val().dataLV;
+     document.getElementById('inputDescricao').value= snapshot.val().descV;});
+}
+
+document.getElementById("insert").onclick = function() {
+    le();
+
+    firebase.database().ref('escolaBiblioteca/'+idV).set({id: idV, nomeV, autorV, generoV, dataLV, descV});
+    
+}
+    
+
+
+document.getElementById("delete").onclick = function() {
+    le();
+
+    firebase.database().ref('escolaBiblioteca/'+idV).remove()
+
+
+console.log(snapshot);
+document.getElementById('inputNomeLivro').value = snapshot.val().nome;
+
+}
+</script>
 </body>
 </html>

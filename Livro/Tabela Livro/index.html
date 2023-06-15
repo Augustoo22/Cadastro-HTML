@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela Livro</title>
     <link rel="stylesheet" href="/menu/style/style.css">
+    <link rel="stylesheet" href="/Livro/Tabela Livro/css/style.css">
 </head>
 <body>
     <input type="checkbox" id="check">
-    <label for="check" id="icone"><img src="/img/sala-de-estudo-tutorial-menu-lateral-retratil-com-css3-n-1-sem-javascript-icone.png" for:></label>
+    <label for="check" id="icone"><img src="/img/sala-de-estudo-tutorial-menu-lateral-retratil-com-css3-n-1-sem-javascript-icone.png"></label>
 
     <div class="barra">
         <nav>
@@ -21,6 +22,98 @@
             <a href="/Livro/Tabela Livro/index.html"><div class="link">Tabela Livro</div></a>
         </nav>
     </div>
+    <main>
 
+        <ul id="lista" >
+           
+        </ul>
+
+
+    </main>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+    apiKey: "AIzaSyC8BbRjmnJYBFUhRT6euJV0VxlteZD4HPA",
+    authDomain: "adne-7feca.firebaseapp.com",
+    databaseURL: "https://adne-7feca-default-rtdb.firebaseio.com",
+    projectId: "adne-7feca",
+    storageBucket: "adne-7feca.appspot.com",
+    messagingSenderId: "1007367144068",
+    appId: "1:1007367144068:web:c89daef197e93b5901f8d1",
+    measurementId: "G-JD7VB4HJ7F"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    </script>
+
+     <script>
+var stdNo = 0;
+ 
+ function addItemslista(idV,nomeV, autorV, generoV, dataLV, descV){
+   var ul = document.getElementById('lista');
+   var header = document.createElement('h2');
+ 
+   var _idV = document.createElement('li');
+   var _nomeV = document.createElement('li');
+   var _autorV = document.createElement('li');
+   var _generoV = document.createElement('li');
+   var _dataLV = document.createElement('li');
+   var _descV = document.createElement('li'); 
+   var br = document.createElement('br');
+   
+   header.innerHTML= 'CADASTRO DO LIVRO';
+   
+ 
+   _idV.innerHTML= 'ID: ' + idV;
+   _nomeV.innerHTML= 'NOME: ' + nomeV;
+   _autorV.innerHTML= 'AUTOR: ' + autorV;
+   _generoV.innerHTML='GENERO: ' + generoV;
+   _dataLV.innerHTML='DATA LANÇAMENTO: ' + dataLV;
+   _descV.innerHTML='DESCRIÇÃO: ' + descV;
+   br.innerHTML= '' + br;
+ 
+   ul.appendChild(header);
+   ul.appendChild(_idV);
+   ul.appendChild(_nomeV);
+   ul.appendChild(_autorV);
+   ul.appendChild(_generoV);
+   ul.appendChild(_dataLV);
+   ul.appendChild(_descV);
+   ul.appendChild(br);
+ }
+ 
+ function FetchAllData(){
+   firebase.database().ref('escolaBiblioteca').once('value',function(snapshot){
+     snapshot.forEach(
+       function(ChildSnapshot){
+         let id = ChildSnapshot.val().idV;
+         let nome = ChildSnapshot.val().nomeV;
+         let autor = ChildSnapshot.val().autorV;
+         let genero  = ChildSnapshot.val().generoV;
+         let dataL = ChildSnapshot.val().dataLV;
+         let desc = ChildSnapshot.val().descV;
+    
+         addItemslista(id,nome,autor,genero,dataL,desc);
+ 
+       }
+     )
+   })
+ }
+ 
+ window.onload(FetchAllData());
+ </script>
 </body>
 </html>
