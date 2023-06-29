@@ -149,7 +149,7 @@ document.getElementById("insert").onclick = function() {
     le();
 
     firebase.database().ref('escolaBiblioteca/'+idV).set({id: idV, nomeV, autorV, generoV, dataLV, descV});
-    
+    alert("Cadastro feito")
 }
     
 
@@ -158,7 +158,7 @@ document.getElementById("delete").onclick = function() {
     le();
 
     firebase.database().ref('escolaBiblioteca/'+idV).remove()
-
+    alert("Livro deletado")
 
 console.log(snapshot);
 document.getElementById('inputNomeLivro').value = snapshot.val().nome;

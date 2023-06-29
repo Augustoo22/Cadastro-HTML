@@ -99,7 +99,7 @@ var stdNo = 0;
    firebase.database().ref('escolaBiblioteca').once('value',function(snapshot){
      snapshot.forEach(
        function(ChildSnapshot){
-         let id = ChildSnapshot.val().idV;
+         let id = ChildSnapshot.val().id;
          let nome = ChildSnapshot.val().nomeV;
          let autor = ChildSnapshot.val().autorV;
          let genero  = ChildSnapshot.val().generoV;

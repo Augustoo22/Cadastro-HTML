@@ -159,6 +159,7 @@ document.getElementById("insert").onclick = function() {
     le();
 
     firebase.database().ref('escola/'+idV).set({id: idV, nomeV, cpfV, rgV, raV, dtnV, dtcV, cursoV, fgV});
+    alert("Cadastro feito")
     
 }
     
@@ -168,7 +169,7 @@ document.getElementById("delete").onclick = function() {
     le();
 
     firebase.database().ref('escola/'+idV).remove()
-
+    alert("Aluno deletado")
 
 console.log(snapshot);
 document.getElementById('inputNome').value = snapshot.val().nome;
